@@ -1,0 +1,313 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef2f6;
+    color: black;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.page {
+    height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    background: white;
+}
+
+.nav {
+    flex: 0 0 200px;
+    color: #fff;
+    background-image:
+        linear-gradient(rgba(14, 32, 85, 0.78), rgba(14, 32, 85, 0.78)),
+        url('https://www.victoriadom.pl/static/b0bb961c3649b72d1142c9c953fba1d2/245c0/VD_domowe-biuro-jak-urzadzic-wnetrze-sprzyjajace-pracy-i-nauce.webp');
+    background-color: #0e2055;
+    background-size: cover;
+    background-position: center;
+    padding: 14px 0;
+    overflow-y: auto;
+}
+
+.nav .logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px 18px;
+}
+
+.nav .logo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #e03030;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .3);
+    user-select: none;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu>li {
+    margin: 0;
+}
+
+.menu a {
+    display: block;
+    padding: 12px 14px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu>li>a {
+    background: rgba(47, 110, 200, 0.55);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+}
+
+.menu>li>a:hover {
+    background: rgba(25, 90, 160, 0.85);
+}
+
+.submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.submenu a {
+    background: rgba(10, 35, 80, 0.68);
+    font-weight: 500;
+    font-size: 13px;
+    padding-left: 32px;
+    color: rgba(200, 225, 255, 0.92);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.submenu a:hover {
+    background: rgba(8, 28, 65, 0.88);
+    color: #fff;
+}
+
+.menu>li:hover .submenu {
+    display: block;
+}
+
+.content {
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
+    background: #fff;
+}
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #2f8fd6;
+    color: #fff;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.topbar h1 {
+    font-size: 28px;
+    margin: 0;
+    font-weight: 800;
+}
+
+.wrap {
+    padding: 18px 22px;
+}
+
+.two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+.block h2 {
+    margin: 14px 0 8px;
+    font-size: 28px;
+    letter-spacing: .2px;
+}
+
+.block h3 {
+    margin: 14px 0 6px;
+    font-size: 18px;
+}
+
+.underline {
+    height: 2px;
+    background: #2f8fd6;
+    width: 100%;
+    margin: 6px 0 12px;
+}
+
+p {
+    line-height: 1.5;
+    color: #263245;
+    margin: 0 0 10px;
+}
+
+.muted {
+    color: #6b7a8c;
+}
+
+.fullwidth {
+    margin: 18px 0 22px;
+    width: 100%;
+}
+
+.spacer {
+    height: 600px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+}
+
+thead th {
+    background: #2c7fbb;
+    color: #fff;
+    text-align: left;
+    padding: 10px 12px;
+    font-weight: 800;
+}
+
+tbody td {
+    padding: 10px 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+tbody tr:nth-child(even) {
+    background: #f2f6fb;
+}
+
+.cta-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin: 22px 0;
+    padding: 22px;
+    background: linear-gradient(135deg, #2f60c8 0%, #1a3e9e 100%);
+    border-radius: 4px;
+    margin-left: -22px;
+    margin-right: -22px;
+}
+
+.cta-btn {
+    display: block;
+    padding: 14px 10px;
+    background: #2f8fd6;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 3px;
+}
+
+.cta-btn:hover {
+    background: #1a6aad;
+}
+
+.footer {
+    background: #16213a;
+    color: #fff;
+    padding: 18px 22px;
+    margin-left: -22px;
+    margin-right: -22px;
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    text-align: left;
+}
+
+.footer h4 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #4db8ff;
+}
+
+.footer p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.footer .copy {
+    margin-top: 14px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 10px;
+}
+
+@media (max-width: 900px) {
+    .page {
+        flex-direction: column;
+    }
+
+    .nav {
+        flex: 0 0 auto;
+        height: auto;
+        overflow: visible;
+    }
+
+    .content {
+        height: auto;
+        overflow-y: visible;
+    }
+
+    body {
+        overflow: auto;
+        height: auto;
+    }
+
+    .menu>li:hover .submenu {
+        display: block;
+    }
+}
+
+@media (max-width: 640px) {
+    .two-cols {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar h1 {
+        font-size: 20px;
+    }
+}
