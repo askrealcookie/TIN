@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Logo RWD</div>
+
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+            <ul class="menu" id="menu">
+                <li><a href="#">Strona główna</a></li>
+                <li><a href="#">O nas</a></li>
+                <li><a href="#">Oferta</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Widok responsywny</h1>
+
+        <div class="view-text"></div>
+
+        <div class="container">
+            <div class="card">
+                <h2>Element 1</h2>
+                <p>
+                    W dzisiejszym świecie nie tylko komputery wyświetlają strony internetowe.
+                    Wiele różnych urządzeń ma ekrany o różnych wymiarach.
+                    Wyzwanie to stworzyć stronę czytelną wszędzie.
+                    Nazywamy to RWD - responsywne projektowanie stron.
+                </p>
+                <button>Dowiedz się więcej</button>
+            </div>
+
+            <div class="card">
+                <h2>Element 2</h2>
+                <div class="gallery">
+                    <img src="https://placehold.co/250x180?text=Zdjecie+1" alt="Zdjęcie 1">
+                    <img src="https://placehold.co/250x180?text=Zdjecie+2" alt="Zdjęcie 2">
+                    <img src="https://placehold.co/250x180?text=Zdjecie+3" alt="Zdjęcie 3">
+                    <img src="https://placehold.co/250x180?text=Zdjecie+4" alt="Zdjęcie 4">
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Element 3</h2>
+                <p>
+                    RWD to podejście do projektowania stron, które sprawia, że wyglądają
+                    dobrze na każdym urządzeniu. Używa się media queries, elastycznych
+                    układów i obrazów.
+                </p>
+                <button>Sprawdź przykłady</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Przykład Responsywnej Strony Internetowej</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("active");
+        }
+
+        document.querySelectorAll("#menu a").forEach(link => {
+            link.addEventListener("click", () => {
+                document.getElementById("menu").classList.remove("active");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
