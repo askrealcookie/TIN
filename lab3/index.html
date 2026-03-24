@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWave</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-layout">
+    <aside class="sidebar">
+      <div class="logo">TechWavee</div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#hero">Strona główna</a></li>
+          <li class="has-submenu">
+            <a href="#services">Usługi</a>
+            <ul class="submenu">
+              <li><a href="#services">Web Design</a></li>
+              <li><a href="#services">Mobile Apps</a></li>
+              <li><a href="#services">Cloud</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <section class="hero" id="hero">
+        <h1>Tworzymy cyfrową przyszłość</h1>
+        <p>
+          TechWave to nowoczesna firma technologiczna specjalizująca się w tworzeniu
+          aplikacji webowych, mobilnych i rozwiązań chmurowych dla firm każdej wielkości.
+        </p>
+        <a href="#services" class="btn">Dowiedz się więcej</a>
+      </section>
+
+      <section class="stats">
+        <h2>TechWave w liczbach</h2>
+        <div class="stats-grid">
+          <div class="stat-box stat-box-1">
+            <strong>67+</strong>
+            <span>Zadowolonych klientów</span>
+          </div>
+          <div class="stat-box stat-box-2">
+            <strong>67</strong>
+            <span>Zrealizowanych projektów</span>
+          </div>
+          <div class="stat-box stat-box-3">
+            <strong>6-7</strong>
+            <span>Lat doświadczenia</span>
+          </div>
+          <div class="stat-box stat-box-4">
+            <strong>67</strong>
+            <span>Krajów na świecie</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="services" id="services">
+        <h2>Nasze usługi</h2>
+        <div class="services-grid">
+          <article class="card web-design">
+            <div class="card-icon">placeholder</div>
+            <h3>Web Design</h3>
+            <p>Projektujemy nowoczesne, responsywne strony internetowe dopasowane do potrzeb Twojej marki.</p>
+          </article>
+          <article class="card mobile-apps">
+            <div class="card-icon">placeholder</div>
+            <h3>Mobile Apps</h3>
+            <p>Tworzymy aplikacje mobilne na systemy iOS oraz Android, skupiając się na prostocie i wygodzie.</p>
+          </article>
+          <article class="card cloud">
+            <div class="card-icon">placeholder</div>
+            <h3>Cloud</h3>
+            <p>Wdrażamy rozwiązania chmurowe, które pomagają firmom rozwijać się bezpiecznie i stabilnie.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <h2>Skontaktuj się z nami</h2>
+        <form>
+          <label for="name">Imię i nazwisko</label>
+          <input type="text" id="name" name="name" placeholder="Jan Kowalski">
+
+          <label for="email">Adres e-mail</label>
+          <input type="email" id="email" name="email" placeholder="jan@example.com">
+
+          <label for="message">Wiadomość</label>
+          <textarea id="message" name="message" rows="6" placeholder="Opisz swoją wiadomość..."></textarea>
+
+          <button type="submit" class="btn">Wyślij wiadomość</button>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="footer-col">
+            <h3>TECHWAVE</h3>
+            <p>nowoczesne rozwiaznaia bvbbbbbbbbbb.</p>
+            <p>&copy; 2025 TechWave Sp. z o.o.</p>
+          </div>
+
+          <div class="footer-col">
+            <h3>USŁUGI</h3>
+            <ul>
+              <li>Web Design</li>
+              <li>Mobile Apps</li>
+              <li>Cloud Solutions</li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>KONTAKT</h3>
+            <ul>
+              <li>kontakt@techwave.pl</li>
+              <li>+48 123 456 789</li>
+              <li>ul. Cyfrowa 1, Warszawa</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">© 2025 TechWave - Wszelkie prawa zastrzeżone</div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
