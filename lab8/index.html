@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paint</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #eef2f7;
+            color: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .app {
+            width: min(95vw, 680px);
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        h1 {
+            margin: 0 0 20px;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        #toolbar,
+        #info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 14px;
+            margin-bottom: 18px;
+            background: #f7f9fc;
+            border: 1px solid #dce3ee;
+            border-radius: 12px;
+            flex-wrap: wrap;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input,
+        select,
+        button {
+            height: 36px;
+            border: 1px solid #b8c4d6;
+            border-radius: 8px;
+            background: #ffffff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        input[type="color"] {
+            width: 52px;
+            padding: 3px;
+        }
+
+        select {
+            padding: 0 10px;
+        }
+
+        button {
+            padding: 0 14px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #e9eef7;
+        }
+
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(var(--grid-size), var(--cell-size));
+            grid-auto-rows: var(--cell-size);
+            justify-content: center;
+            width: max-content;
+            max-width: 100%;
+            overflow: auto;
+            margin: 0 auto;
+            padding: 10px;
+            background: #c9d3e0;
+            border: 2px solid #9aa8ba;
+            border-radius: 10px;
+        }
+
+        .cell {
+            width: var(--cell-size);
+            height: var(--cell-size);
+            background: #ffffff;
+            border: 1px solid #c4cbd5;
+        }
+
+        .cell:hover {
+            background: #e8eef8;
+        }
+
+        #info span {
+            min-width: 28px;
+            display: inline-block;
+            text-align: center;
+            font-weight: bold;
+            color: #d41189;
+        }
+    </style>
+</head>
+<body>
+    <main class="app">
+        <h1>paint</h1>
+
+        <div id="toolbar"></div>
+
+        <div id="info"></div>
+
+        <div id="grid"></div>
+    </main>
+
+    <script>
+        const GRID_SIZE = 16;
+        const MAX_GRID_WIDTH = 520;
+        const CELL_SIZE = Math.max(10, Math.min(28, Math.floor(MAX_GRID_WIDTH / GRID_SIZE)));
+
+        document.documentElement.style.setProperty('--grid-size', GRID_SIZE);
+        document.documentElement.style.setProperty('--cell-size', CELL_SIZE + 'px');
+
+        const toolbar = document.getElementById('toolbar');
+        const info = document.getElementById('info');
+        const grid = document.getElementById('grid');
+
+        const colorLabel = document.createElement('label');
+        colorLabel.textContent = 'Kolor:';
+        colorLabel.setAttribute('for', 'color-picker');
+
+        const colorPicker = document.createElement('input');
+        colorPicker.type = 'color';
+        colorPicker.id = 'color-picker';
+        colorPicker.value = '#000000';
+
+        const brushLabel = document.createElement('label');
+        brushLabel.textContent = 'Pędzel:';
+        brushLabel.setAttribute('for', 'brush-size');
+
+        const brushSize = document.createElement('select');
+        brushSize.id = 'brush-size';
+
+        for (let size = 1; size <= 3; size++) {
+            const option = document.createElement('option');
+            option.value = size;
+            option.textContent = size + '×' + size;
+            brushSize.appendChild(option);
+        }
+
+        const eraserBtn = document.createElement('button');
+        eraserBtn.id = 'eraser-btn';
+        eraserBtn.textContent = 'Gumka';
+
+        const clearBtn = document.createElement('button');
+        clearBtn.id = 'clear-btn';
+        clearBtn.textContent = 'Wyczyść';
+
+        toolbar.appendChild(colorLabel);
+        toolbar.appendChild(colorPicker);
+        toolbar.appendChild(brushLabel);
+        toolbar.appendChild(brushSize);
+        toolbar.appendChild(eraserBtn);
+        toolbar.appendChild(clearBtn);
+
+        const rowText = document.createTextNode('Wiersz: ');
+        const infoRow = document.createElement('span');
+        infoRow.id = 'info-row';
+        infoRow.textContent = '-';
+
+        const colText = document.createTextNode('Kolumna: ');
+        const infoCol = document.createElement('span');
+        infoCol.id = 'info-col';
+        infoCol.textContent = '-';
+
+        const countText = document.createTextNode('Aktywne komórki: ');
+        const infoCount = document.createElement('span');
+        infoCount.id = 'info-count';
+        infoCount.textContent = '0';
+
+        info.appendChild(rowText);
+        info.appendChild(infoRow);
+        info.appendChild(colText);
+        info.appendChild(infoCol);
+        info.appendChild(countText);
+        info.appendChild(infoCount);
+
+        for (let row = 0; row < GRID_SIZE; row++) {
+            for (let col = 0; col < GRID_SIZE; col++) {
+                const cell = document.createElement('div');
+                cell.className = 'cell';
+                cell.dataset.row = row;
+                cell.dataset.col = col;
+                grid.appendChild(cell);
+            }
+        }
+    </script>
+</body>
+</html>
